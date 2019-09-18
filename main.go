@@ -6,6 +6,7 @@ import (
 	"log"
 
 	_ "github.com/denisenkom/go-mssqldb"
+	telegrama "github.com/RogerioML/despachante"
 )
 
 var (
@@ -27,7 +28,7 @@ func main() {
 	}
 	defer conn.Close()
 
-	t, err := despachante.consultaTelegrama(conn)
+	t, err := telegrama.consultaTelegrama(conn)
 
 	if err != nil {
 		log.Fatal(err.Error())
